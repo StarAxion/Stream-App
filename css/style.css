@@ -9,6 +9,9 @@ body {
   font-family: 'Caveat', cursive;
   font-size: 16px;
   background-image: url(../img/bg.jpg);
+  background-repeat: repeat; 
+  background-position: center; 
+  background-size: auto; 
 }
 
 main {
@@ -43,13 +46,13 @@ video, canvas {
 }
 
 #webcam-recorded-video {
-  width: 426px;
-  height: 240px;
+  width: 456px;
+  height: 270px;
 }
 
 #screen-recorded-video {
-  width: 854px;
-  height: 480px;
+  width: 884px;
+  height: 510px;
 }
 
 .controls {
@@ -73,7 +76,6 @@ a {
 }
 
 button, a.button {
-  position: relative;
   margin: 10px 5px 10px;
   padding: 5px 20px;
   font-family: inherit;
@@ -81,45 +83,23 @@ button, a.button {
   font-weight: 500;
   color: #ffffff;
   text-shadow: 0 3px 0 #7b502e; 
-  background: linear-gradient(#c38b66, #9d6741);
+  background-color: #c38b66;
+  background-image: linear-gradient(#c38b66, #9d6741);
   border: solid 1px #422213;
   border-bottom: solid 3px #33180d;
   box-shadow: inset 0 0 0 1px #b98c62;
 }
 
-button::before, a.button::before {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  display: block;
-  width: 100%; 
-  height: 100%;
-  padding: 2px 0 0;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -webkit-box-shadow: #959595 0 2px 5px;
-  -moz-box-shadow: #959595 0 2px 5px;
-  border-radius: 3px;
-  box-shadow: #959595 0 2px 5px;
-}
-
-button:active::before, button:disabled::before, a.button::before { 
-  padding: 1px 0 0; 
-}
-
 button:hover, a.button:hover {
-  background: linear-gradient(#9d6741, #c38b66);
-  border: solid 1px #422213;
-  border-bottom: solid 3px #33180d;
-  box-shadow: inset 0 0 0 1px #b98c62; 
+  background-color: #9d6741;
+  background-image: linear-gradient(#9d6741, #c38b66);
 }
   
 button:active, button:disabled, a.button:active {
-  background: linear-gradient(#7b502e, #c38b66);
-  border: solid 1px #422213;
+  background-color: #7b502e;
+  background-image: linear-gradient(#7b502e, #c38b66);
   border-bottom: solid 3px transparent;
-  box-shadow: inset 0 10px 15px 0 #7b502e; 
+  box-shadow: inset 0 10px 15px 0 #422213;
 }
 
 .snapshot-controls {
@@ -141,8 +121,10 @@ canvas,
 }
 
 .error-message {
+  margin: 10px;
   font-size: 2.5rem;
   font-weight: 600;
+  text-align: center;
   text-shadow: 0 1px 0 #ffffff, 0 2px 0 #000000;
 }
 
@@ -161,12 +143,14 @@ label {
 }
 
 select { 
+  width: 150px;
   margin: 10px 5px 10px;
-  padding: 5px 50px 5px 15px;
+  padding: 5px 15px;
   font-family: inherit;
   font-size: 1.5rem;
   font-weight: 700;
   color: #ffffff;
+  background-color: #b98c62;
   background-repeat: no-repeat, repeat;
   background-position: right 15px top 50%, 0 0;
   background-size: 1rem auto, 100%; 
@@ -186,16 +170,15 @@ select {
 
 .select-opened { 
   background-image: url('../img/up-arrow.svg'), 
-    linear-gradient(#7b502e, #c38b66);
+    linear-gradient(#9d6741, #c38b66);
 }
 
 select::-ms-expand { 
   display: none; 
-} 
+}
 
 select:focus {
-  border: solid 1px #422213;
-  border-bottom: solid 3px transparent;
+  border-bottom: solid 3px #7b502e;
   box-shadow: inset 0 10px 15px 0 #7b502e; 
 } 
 
@@ -203,6 +186,11 @@ select option {
   font-weight: 500; 
   color: #000000;
 } 
+
+select option:checked {
+  color: #ffffff;
+  background-color: #422213;
+}
 
 
 /* Filter options: */

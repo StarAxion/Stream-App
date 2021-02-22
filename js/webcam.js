@@ -39,8 +39,9 @@ const stopCamera = () => {
   canvas.style.display = 'none';
   recordButton.style.display = 'none';
   recordButton.textContent = 'Record';
-  snapshotControls.style.display = 'none';
   recordBlock.style.display = 'none';
+  snapshotControls.style.display = 'none';
+  filterSelect.value = 'none';
   window.stream = null;
   webcamVideo.srcObject = null;
   recordedVideo.src = '';
