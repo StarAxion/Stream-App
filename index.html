@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stream App</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <main>
+    <nav>
+      <button id="webcam-button" disabled>Webcam</button>
+      <button id="screenshare-button">Screenshare</button>
+    </nav>
+
+    <section class="webcam-section">
+      <h2>Webcam</h2>
+
+      <div class="webcam-block">
+        <video id="webcam-video" autoplay muted playsinline></video>
+        <canvas></canvas>
+
+        <div class="controls">
+          <button id="webcam-start-button">Start camera</button>
+          <button id="webcam-record-button">Record</button>
+
+          <div class="snapshot-controls">
+            <button id="snapshot-button">Take snapshot</button>
+            <label for="filter">Filter:</label>
+            <select class="select-closed" id="filter">
+              <option value="none">None</option>
+              <option value="blur">Blur</option>
+              <option value="grayscale">Grayscale</option>
+              <option value="invert">Invert</option>
+              <option value="sepia">Sepia</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div id="webcam-record-block">
+        <video id="webcam-recorded-video" playsinline loop></video>
+
+        <div class="controls">
+          <button id="webcam-play-button">Play</button>
+          <a class="button" id="webcam-download-button">Download</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="screenshare-section">
+      <h2>Screenshare</h2>
+
+      <video id="screen-video" autoplay muted playsinline></video>
+
+      <div class="controls">
+        <button id="screen-start-button">Start</button>
+        <button id="screen-record-button">Record</button>
+      </div>
+
+      <div id="screen-record-block">
+        <video id="screen-recorded-video" playsinline loop></video>
+
+        <div class="controls">
+          <button id="screen-play-button">Play</button>
+          <a class="button" id="screen-download-button">Download</a>
+        </div>
+      </div>
+    </section>
+
+    <p class="error-message"></p>
+  </main>
+
+  <script src="js/script.js"></script>
+  <script type="module" src="js/webcam.js"></script>
+  <script type="module" src="js/screenshare.js"></script>
+</body>
+
+</html>

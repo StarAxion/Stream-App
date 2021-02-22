@@ -1,0 +1,233 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  font-family: 'Caveat', cursive;
+  font-size: 16px;
+  background-image: url(../img/bg.jpg);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+}
+
+section {
+  text-align: center;
+}
+
+h2 {
+  margin: 20px 0;
+  font-size: 4rem;
+  font-weight: 700;
+  text-shadow: 0 3px 0 #b98c62, 
+    0 4px 0 #c38b66, 
+    0 5px 0 #9d6741, 
+    0 6px 0 #7b502e, 
+    0 7px 0 #422213, 
+    0 8px 8px #33180d;
+}
+
+video, canvas {
+  margin: 10px;
+  padding: 10px;
+  background-color: #9d6741;
+  border: solid 5px #422213;
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+}
+
+#webcam-recorded-video {
+  width: 426px;
+  height: 240px;
+}
+
+#screen-recorded-video {
+  width: 854px;
+  height: 480px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0 10px;
+}
+
+button {
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+a {
+  text-decoration: none;
+}
+
+button, a.button {
+  position: relative;
+  margin: 10px 5px 10px;
+  padding: 5px 20px;
+  font-family: inherit;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #ffffff;
+  text-shadow: 0 3px 0 #7b502e; 
+  background: linear-gradient(#c38b66, #9d6741);
+  border: solid 1px #422213;
+  border-bottom: solid 3px #33180d;
+  box-shadow: inset 0 0 0 1px #b98c62;
+}
+
+button::before, a.button::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%; 
+  height: 100%;
+  padding: 2px 0 0;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-box-shadow: #959595 0 2px 5px;
+  -moz-box-shadow: #959595 0 2px 5px;
+  border-radius: 3px;
+  box-shadow: #959595 0 2px 5px;
+}
+
+button:active::before, button:disabled::before, a.button::before { 
+  padding: 1px 0 0; 
+}
+
+button:hover, a.button:hover {
+  background: linear-gradient(#9d6741, #c38b66);
+  border: solid 1px #422213;
+  border-bottom: solid 3px #33180d;
+  box-shadow: inset 0 0 0 1px #b98c62; 
+}
+  
+button:active, button:disabled, a.button:active {
+  background: linear-gradient(#7b502e, #c38b66);
+  border: solid 1px #422213;
+  border-bottom: solid 3px transparent;
+  box-shadow: inset 0 10px 15px 0 #7b502e; 
+}
+
+.snapshot-controls {
+  display: none;
+  align-items: center;
+}
+
+.screenshare-section,
+canvas,
+#webcam-video,
+#webcam-record-block,
+#webcam-record-button,
+#webcam-download-button,
+#screen-video,
+#screen-record-block,
+#screen-record-button,
+#screen-download-button {
+  display: none;
+}
+
+.error-message {
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-shadow: 0 1px 0 #ffffff, 0 2px 0 #000000;
+}
+
+
+/* Filter styles: */
+
+label {
+  margin: 10px 5px 10px;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: -1px -1px 0 #ffffff, 
+    1px -1px 0 #ffffff, 
+    -1px 1px 0 #ffffff, 
+    1px 1px 0 #ffffff;
+}
+
+select { 
+  margin: 10px 5px 10px;
+  padding: 5px 50px 5px 15px;
+  font-family: inherit;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  background-repeat: no-repeat, repeat;
+  background-position: right 15px top 50%, 0 0;
+  background-size: 1rem auto, 100%; 
+  border: solid 1px #422213;
+  border-bottom: solid 3px #33180d;
+  box-shadow: inset 0 0 0 1px #b98c62;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+} 
+
+.select-closed {
+  background-image: url('../img/down-arrow.svg'), 
+    linear-gradient(#c38b66, #9d6741); 
+}
+
+.select-opened { 
+  background-image: url('../img/up-arrow.svg'), 
+    linear-gradient(#7b502e, #c38b66);
+}
+
+select::-ms-expand { 
+  display: none; 
+} 
+
+select:focus {
+  border: solid 1px #422213;
+  border-bottom: solid 3px transparent;
+  box-shadow: inset 0 10px 15px 0 #7b502e; 
+} 
+
+select option { 
+  font-weight: 500; 
+  color: #000000;
+} 
+
+
+/* Filter options: */
+
+.none {
+  -webkit-filter: none;
+  filter: none;
+}
+
+.blur {
+  -webkit-filter: blur(3px);
+  filter: blur(3px);
+}
+
+.grayscale {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
+
+.invert {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}
+
+.sepia {
+  -webkit-filter: sepia(1);
+  filter: sepia(1);
+}
