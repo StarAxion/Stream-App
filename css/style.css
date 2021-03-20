@@ -258,7 +258,7 @@ select option:checked {
 		font-size: 85%;
 	}
 
-  .snapshot-controls {
+  .controls, .snapshot-controls {
     flex-direction: column;
   }
 
