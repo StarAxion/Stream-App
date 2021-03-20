@@ -108,7 +108,7 @@ button:active, button:disabled, a.button:active {
 
 .snapshot-controls {
   display: none;
-  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
 }
 
@@ -228,52 +228,38 @@ select option:checked {
 
 /* Media queries: */
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1024px) {
 
 	html {
 		font-size: 95%;
 	}
 
   #screen-video, #screen-recorded-video {
-    max-width: 800px;
+    width: 95vw;
   }
 
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 640px) {
 
 	html {
 		font-size: 90%;
 	}
 
-  #screen-video, #screen-recorded-video {
-    max-width: 720px;
+  #webcam-video, #webcam-recorded-video, canvas {
+    width: 95vw;
   }
 
 }
 
-@media screen and (max-width: 854px) {
+@media screen and (max-width: 480px) {
 
-	html {
+  html {
 		font-size: 85%;
 	}
 
-  #screen-video, #screen-recorded-video {
-    max-width: 640px;
-  }
-
-}
-
-@media screen and (max-width: 800px) {
-
-	html {
-		font-size: 80%;
-	}
-
-  video, canvas {
-    max-width: 100vw !important;
-    margin-left: 0;
-    margin-right: 0;
+  .snapshot-controls {
+    flex-direction: column;
   }
 
 }
