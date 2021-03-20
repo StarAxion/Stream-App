@@ -236,6 +236,7 @@ select option:checked {
 
   #screen-video, #screen-recorded-video {
     width: 95vw;
+    height: auto;
   }
 
 }
@@ -248,6 +249,7 @@ select option:checked {
 
   #webcam-video, #webcam-recorded-video, canvas {
     width: 95vw;
+    height: auto;
   }
 
 }
