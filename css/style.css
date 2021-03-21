@@ -265,7 +265,7 @@ select option:checked {
   #webcam-video, 
   #webcam-recorded-video, 
   canvas {
-    height: 95vh;
+    height: 90vh;
   }
 
   .controls, .snapshot-controls {
