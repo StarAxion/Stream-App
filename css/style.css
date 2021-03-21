@@ -260,6 +260,14 @@ select option:checked {
 		font-size: 85%;
 	}
 
+  #screen-video, 
+  #screen-recorded-video, 
+  #webcam-video, 
+  #webcam-recorded-video, 
+  canvas {
+    height: 95vh;
+  }
+
   .controls, .snapshot-controls {
     flex-direction: column;
   }
